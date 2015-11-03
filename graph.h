@@ -17,6 +17,7 @@ graph* newGraph(int nodes);
 int setCapacity(graph* g, int from, int to, double value);
 double getCapacity(graph* g, int from, int to);
 graph* loadGraph(char* file);
+void printGraph(graph* g);
 
 list* getNeighbors(graph* g, int node);
 

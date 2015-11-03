@@ -73,3 +73,13 @@ list* getNeighbors(graph* g, int node){
   }
   return l;
 }
+
+void printGraph(graph* g){
+  int i,j;
+  for(i = 0; i < g->nodes; i++){
+    for(j=0; j < g->nodes; j++){
+      printf("%f ", g->data[i][j]);
+    }
+    printf("\n");
+  }
+}

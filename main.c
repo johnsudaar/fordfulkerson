@@ -9,7 +9,7 @@ int main(int argc, char* argv[]){
   argc = argc;
   argv = argv;
 
-  graph* g = loadGraph("test.graph");
+  graph* g = loadGraph(argv[1]);
   double flow = ford_fulkerson(g, 0, g->nodes - 1);
   printf("MaxFlow : %f \n",flow);
   return 0;

@@ -2,14 +2,15 @@
 #include <stdlib.h>
 
 #include "graph.h"
+#include "ford.h"
 
 int main(int argc, char* argv[]){
   // To remove warnings ...
   argc = argc;
   argv = argv;
 
-  graph* g = newGraph(2);
-  setFlow(g,0,1,10);
-  printf("%f\n", getFlow(g,0,1));
+  graph* g = loadGraph("test.graph");
+  double flow = ford_fulkerson(g, 0, g->nodes - 1);
+  printf("MaxFlow : %f \n",flow);
   return 0;
 }

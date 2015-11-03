@@ -1,6 +1,11 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "listes.h"
+
 enum graph_errors {NODE_OUT_OF_RANGE};
 
 typedef struct{
@@ -9,8 +14,10 @@ typedef struct{
 } graph;
 
 graph* newGraph(int nodes);
+int setCapacity(graph* g, int from, int to, double value);
+double getCapacity(graph* g, int from, int to);
+graph* loadGraph(char* file);
 
-int setFlow(graph* g, int from, int to, double value);
-double getFlow(graph* g, int from, int to);
+list* getNeighbors(graph* g, int node);
 
 #endif
